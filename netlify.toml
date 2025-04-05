@@ -1,5 +1,5 @@
 [build]
-  command = "hugo mod tidy && hugo --gc --minify -D"
+  command = "npm install && hugo mod tidy && hugo --gc --minify -D"
   publish = "public"
 
 [build.environment]
