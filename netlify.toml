@@ -1,9 +1,9 @@
-[build]
-  command = "hugo --gc --minify -D"
+ [build]
+  command = "hugo mod tidy && hugo --gc --minify -D"
   publish = "public"
 
-  [build.environment]
-  HUGO_VERSION = "0.121.1"  # or your version
+[build.environment]
+  HUGO_VERSION = "0.121.1"
   GO_VERSION = "1.21"
   HUGO_ENV = "production"
   GIT_SUBMODULE_STRATEGY = "recursive"
