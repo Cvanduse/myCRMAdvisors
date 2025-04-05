@@ -1,9 +1,20 @@
- [build]
+[build]
   command = "hugo mod tidy && hugo --gc --minify -D"
   publish = "public"
 
 [build.environment]
-  HUGO_VERSION = "0.121.1"
+  HUGO_VERSION = "0.145.0"
   GO_VERSION = "1.21"
   HUGO_ENV = "production"
   GIT_SUBMODULE_STRATEGY = "recursive"
+  HUGO_ENABLEGITINFO = "true"
+
+# Optional: Context specific settings
+[context.production.environment]
+  HUGO_ENV = "production"
+
+[context.deploy-preview.environment]
+  HUGO_VERSION = "0.145.0"
+
+[context.branch-deploy.environment]
+  HUGO_VERSION = "0.145.0"
