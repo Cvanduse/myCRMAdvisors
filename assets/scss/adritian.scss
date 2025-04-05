@@ -421,3 +421,14 @@ footer_links .nav-item .nav-link::after {
 }
 
 /* end dark mode */
+
+// Custom overrides
+.bd-navbar::after {
+  background-image: none; // Remove the theme's default violet gradient
+  background-color: $white; // Set a solid white background (adjust if needed)
+}
+
+// Ensure sticky header also gets a white background if desired
+.header--sticky-triggered .bd-navbar::after {
+   background-color: $white; // Or slightly off-white like $gray-100
+}
