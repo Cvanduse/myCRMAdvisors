@@ -1,0 +1,84 @@
+// Colors
+$white: #fff;
+$black: #000;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+
+// Theme Colors
+$base-color: #478079;
+$text-color: $gray-900;
+$background-color: $white;
+
+// Typography
+$font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-size-base: 1rem;
+$line-height-base: 1.5;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+$spacing-unit: $spacer;
+$container-padding: $spacing-unit * 2;
+
+// Grid breakpoints
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Container maximum widths
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Dropdown
+$dropdown-padding-y: 0.5rem;
+$dropdown-padding-x: 0;
+$dropdown-color: $text-color;
+$dropdown-bg: $white;
+$dropdown-border-color: rgba($black, 0.15);
+$dropdown-border-radius: 0.25rem;
+$dropdown-border-width: 1px;
+$dropdown-box-shadow: 0 0.5rem 1rem rgba($black, 0.175);
+
+// Color mode variables
+$light-text-emphasis-dark: rgba($white, .75);
+$dark-text-emphasis-dark: rgba($black, .75);
+$light-bg-subtle-dark: rgba($white, .05);
+$dark-bg-subtle-dark: rgba($black, .05);
+$light-border-subtle-dark: rgba($white, .1);
+$dark-border-subtle-dark: rgba($black, .1);
+
+// Bootstrap color mode variables
+:root {
+  --bd-violet-rgb: 112.520718,44.062154,249.437846;
+  --bs-dropdown-font-size: 0.875rem;
+  --bs-dropdown-padding-x: 0.25rem;
+  --bs-dropdown-padding-y: 0.25rem;
+  --bs-dropdown-min-width: 12rem;
+  --bs-dropdown-link-hover-bg: rgba(var(--bd-violet-rgb), 0.1);
+  --bs-dropdown-link-active-bg: rgba(var(--bd-violet-rgb), 1);
+}

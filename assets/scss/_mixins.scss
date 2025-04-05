@@ -1,0 +1,107 @@
+// Media query mixin
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == "small" {
+    @media (min-width: 576px) { @content; }
+  }
+  @else if $breakpoint == "medium" {
+    @media (min-width: 768px) { @content; }
+  }
+  @else if $breakpoint == "large" {
+    @media (min-width: 992px) { @content; }
+  }
+  @else if $breakpoint == "xlarge" {
+    @media (min-width: 1200px) { @content; }
+  }
+}
+
+// Flexbox mixin
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+// Container mixin
+@mixin container($max-width: 1200px) {
+  width: 100%;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $container-padding;
+}
+
+// Breakpoint variables
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+// Media breakpoint mixins
+@mixin media-breakpoint-up($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-down($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: (map-get($breakpoints, $breakpoint) - 0.02)) {
+      @content;
+    }
+  }
+}
+
+@mixin media-breakpoint-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    @media (min-width: map-get($breakpoints, $lower)) and (max-width: (map-get($breakpoints, $upper) - 0.02)) {
+      @content;
+    }
+  }
+}
+
+// Transition mixin
+@mixin transition($property: all, $duration: 0.3s, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}
+
+// Box shadow mixin
+@mixin box-shadow($shadow...) {
+  box-shadow: $shadow;
+}
+
+// Font size mixin
+@mixin font-size($size) {
+  font-size: $size;
+}
+
+// Border radius mixin
+@mixin border-radius($radius) {
+  border-radius: $radius;
+}
+
+// Color mode mixin
+@mixin color-mode($mode: light) {
+  @if $mode == light {
+    @content;
+  }
+  @if $mode == dark {
+    @media (prefers-color-scheme: dark) {
+      @content;
+    }
+  }
+}
+
+// RFS mixin
+@mixin rfs($value, $property: font-size) {
+  @if type-of($value) == "number" {
+    #{$property}: $value;
+  } @else {
+    #{$property}: var(#{$value});
+  }
+} 

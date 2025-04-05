@@ -1,5 +1,11 @@
-@import "bootstrap/bootstrap";
-@import "variables";
+// Import custom variables first
+@import "custom-variables";
+
+// Import mixins
+@import "mixins";
+@import "rfs";
+
+// Import theme components
 @import "navbar";
 @import "menu";
 @import "raditian";

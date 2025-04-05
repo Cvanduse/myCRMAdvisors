@@ -1,0 +1,8 @@
+// RFS mixin
+@mixin rfs($value, $property: font-size) {
+  @if type-of($value) == "number" {
+    #{$property}: $value;
+  } @else {
+    #{$property}: $value;
+  }
+} 
