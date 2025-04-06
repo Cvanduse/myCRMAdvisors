@@ -24,8 +24,8 @@ draft = false
 {{< /showcase-section >}}
 
 {{< about-section
-    title="About me"
-    content="This content is using the <code>about-section</code> shortcode. <br/>You can write <code>HTML</code>, as long as you <em>wrap it</em> accordingly. "
+    title="About us 2"
+    content="At My CRM Advisors, we are a team of Salesforce and data analytics professionals dedicated to transforming your CRM into a powerful engine for growth. Specializing in Financial Services, Nonprofits and Foundations, and the Mortgage Industry, we bring deep industry knowledge and technical expertise to every project. We offer a full suite of services — from strategic consulting and implementation to workflow optimization and custom development — all designed to unlock data-driven insights and elevate your operations."
     button_icon="icon-user"
     button_text="You can edit the text, link and icon"
     button_url="https://www.google.com"
@@ -34,7 +34,8 @@ draft = false
  >}}
 
 {{< education-list
-    title="Formal Education" >}}
+    title="Services  What we do" 
+    >}}
 
 {{< experience-section
     title="My job experience"
@@ -69,16 +70,6 @@ draft = false
     form_method="POST"
 >}}
 
-{{< newsletter-section 
-    newsletter_title="Stay updated"
-    newsletter_placeholder="Enter your email"
-    newsletter_button="Subscribe"
-    newsletter_success_message="Thank you for subscribing!"
-    newsletter_error_message="Something went wrong, please try again."
-    newsletter_note="We respect your privacy and won't share your data."
-    form_action="/"
-    form_method="POST"
->}}
 
-## Extra content
-Additional content added after the `section` blocks. Here you could freestyle, add other shortcodes, ...  Or just let the content empty, and rely on the shortcode sections alone.
+
+

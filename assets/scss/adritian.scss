@@ -432,3 +432,6 @@ footer_links .nav-item .nav-link::after {
 .header--sticky-triggered .bd-navbar::after {
    background-color: $white; // Or slightly off-white like $gray-100
 }
+
+// Custom styles import
+@import "custom";

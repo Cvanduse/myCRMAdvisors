@@ -3,6 +3,7 @@
    * Copyright 2011-2024 The Bootstrap Authors
    * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
    */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:wght@700&display=swap");
 :root,
 [data-bs-theme="light"] {
   --bs-blue: #0d6efd;
@@ -11535,3 +11536,117 @@ footer_links .nav-item .nav-link::after {
 
 .header--sticky-triggered .bd-navbar::after {
   background-color: #fff; }
+
+:root {
+  --bs-body-bg: #fff;
+  --bs-body-color: #000;
+  --bd-violet-bg: #fff;
+  --bd-violet-rgb: 255, 255, 255; }
+
+body {
+  background-color: #fff !important;
+  color: #000;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased; }
+
+.rad-navbar {
+  background-color: #fff !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); }
+
+.rad-showcase {
+  background-color: #fff !important;
+  color: #000;
+  padding: 6rem 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center; }
+  .rad-showcase .container {
+    max-width: 1200px;
+    padding: 0 40px; }
+  .rad-showcase .location-tag {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: 100px;
+    font-size: 1.1rem;
+    color: #000;
+    margin-bottom: 2rem; }
+  .rad-showcase .hero-content {
+    max-width: 960px; }
+  .rad-showcase .hero-title h1, .rad-showcase .hero-title .h1 {
+    color: #000;
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1.5rem; }
+    .rad-showcase .hero-title h1 em, .rad-showcase .hero-title .h1 em {
+      color: #000;
+      font-style: normal; }
+  .rad-showcase .hero-description {
+    color: #000;
+    font-size: 1.25rem;
+    margin-bottom: 3rem; }
+  .rad-showcase .hero-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem; }
+  .rad-showcase .social-links {
+    display: flex;
+    gap: 24px; }
+    .rad-showcase .social-links a {
+      color: #000;
+      font-size: 1.5rem;
+      margin-right: 1.5rem;
+      text-decoration: none;
+      transition: opacity 0.3s ease; }
+      .rad-showcase .social-links a:hover {
+        opacity: 0.7; }
+  .rad-showcase .about-button .btn {
+    background-color: transparent;
+    border: 2px solid #000;
+    color: #000;
+    padding: 0.75rem 2rem;
+    border-radius: 2rem;
+    font-weight: 500;
+    transition: all 0.3s ease; }
+    .rad-showcase .about-button .btn:hover {
+      background-color: #000;
+      color: #fff; }
+
+/* Import Google Fonts */
+/* Apply fonts to spans */
+.headline {
+  font-size: 4rem;
+  /* Adjust size as needed */
+  line-height: 1.2;
+  white-space: normal !important;
+  /* Ensure <br> tags are respected */ }
+
+.font-poppins-bold {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  /* Bold */ }
+
+.font-playfair-italic {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-weight: 400;
+  /* Regular weight for italic */ }
+
+.font-playfair-regular {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  /* Regular weight */
+  /* You might need slight adjustments for alignment/size */
+  position: relative;
+  top: -0.05em;
+  /* Example adjustment */ }
+
+/* Optional: Add some spacing between words if needed */
+.headline span {
+  margin-right: 0.1em;
+  /* Adjust spacing */ }
+
+.headline span:last-child {
+  margin-right: 0; }
