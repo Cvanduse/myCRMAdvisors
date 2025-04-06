@@ -1,0 +1,41 @@
+{{- $src := .src -}}
+{{- $alt := .alt | default "Image" -}}
+{{- $class := .class -}}
+{{- $style := .style -}}
+{{- $width := .width | default "auto" -}}
+{{- $height := .height | default "auto" -}}
+
+{{- $imageResource := resources.Get $src -}}
+{{- $loadingAttr := "lazy" -}}
+
+{{- if $imageResource -}}
+  {{- $processedImage := $imageResource -}}
+  {{- if gt $imageResource.Width 1200 -}}
+    {{- $processedImage = $imageResource.Resize "1200x" -}}
+  {{- end -}}
+  
+  {{- $webpImage := $processedImage.Resize (printf "%dx%d webp" $processedImage.Width $processedImage.Height) -}}
+  
+  <picture>
+    <source srcset="{{ $webpImage.RelPermalink }}" type="image/webp">
+    <img 
+      src="{{ $processedImage.RelPermalink }}" 
+      width="{{ if ne $width "auto" }}{{ $width }}{{ else }}{{ $processedImage.Width }}{{ end }}" 
+      height="{{ if ne $height "auto" }}{{ $height }}{{ else }}{{ $processedImage.Height }}{{ end }}" 
+      alt="{{ $alt }}" 
+      {{ with $class }}class="lozad {{ . }}"{{ else }}class="lozad"{{ end }}
+      {{ with $style }}style="{{ . }}"{{ end }}
+      loading="{{ $loadingAttr }}" 
+      decoding="async">
+  </picture>
+{{- else -}}
+  <img 
+    src="{{ $src }}" 
+    width="{{ $width }}" 
+    height="{{ $height }}" 
+    alt="{{ $alt }}" 
+    {{ with $class }}class="{{ . }}"{{ end }}
+    {{ with $style }}style="{{ . }}"{{ end }}
+    loading="{{ $loadingAttr }}" 
+    decoding="async">
+{{- end -}} 

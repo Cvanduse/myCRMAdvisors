@@ -49,13 +49,10 @@
                 <img class="img-fluid rad-fade-down rad-delay-md showcase-image" 
                      src="{{ $image.RelPermalink }}" 
                      alt="{{ $imgAlt }}" 
-                     {{/* Optional: Add width/height if $image is processed */}}
-                     {{/* width="{{ $image.Width }}" 
-                     height="{{ $image.Height }}" */}}
-                     style="transform: scale({{ $imgScale }});">
+                     style="transform: scale({{ $imgScale }});"
+                     loading="eager">
             </div>
             {{ end }}
         </div>
     </div>
-
 </section> 

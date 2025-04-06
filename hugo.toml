@@ -154,3 +154,19 @@ listStyle = "summary"
 
 [params.experience]
 showJobCard = true
+
+[minify]
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace = false
+    [minify.tdewolff.css]
+      keepCSS2 = true
+    [minify.tdewolff.js]
+      keepVarNames = false
+    [minify.tdewolff.svg]
+      keepComments = false
+
+[imaging]
+  quality = 85
+  resampleFilter = "Lanczos"

@@ -43,7 +43,11 @@
           <p class="service-item-description mb-4">{{ $item.description }}</p>
           {{ $img := resources.Get $item.image }}
           {{ if $img }}
-            <img src="{{ $img.RelPermalink }}" alt="{{ $item.title }}" class="img-fluid service-image">
+            {{ partial "lazy-image.html" (dict 
+              "src" $item.image 
+              "alt" $item.title
+              "class" "img-fluid service-image"
+            ) }}
           {{ else }}
             <!-- Optional: Placeholder if image not found -->
              <div class="image-placeholder">Image for {{ $item.title }}</div> 
@@ -55,3 +59,40 @@
   </div>
 </section>
 {{- end -}}
+
+<style>
+/* Service image styling */
+.service-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 2rem; /* Space between text and image */
+  border-radius: 8px; /* Slightly rounded corners */
+}
+
+/* Placeholder styling */
+.image-placeholder {
+  height: 200px;
+  background-color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  border-radius: 8px;
+  margin-top: 2rem;
+}
+
+/* Lazy loading optimizations */
+.lozad {
+  min-height: 1px;
+  min-width: 1px;
+}
+
+img.lozad[data-loaded="true"] {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
