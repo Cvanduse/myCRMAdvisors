@@ -120,6 +120,19 @@ body {
   white-space: normal !important; /* Ensure <br> tags are respected */
 }
 
+// Fix button contrast in about section
+#about .btn.btn-primary {
+  background-color: #fff; // White background
+  color: #000;           // Black text
+  border-color: #000;     // Black border
+}
+
+#about .btn.btn-primary:hover {
+  background-color: #e0e0e0; // Light grey background on hover
+  color: #000;           // Black text on hover
+  border-color: #000;     // Keep black border on hover
+}
+
 .font-poppins-bold {
   font-family: 'Poppins', sans-serif;
   font-weight: 700; /* Bold */
@@ -145,4 +158,206 @@ body {
 }
 .headline span:last-child {
   margin-right: 0;
+}
+
+// Services section styles for interactive list (inspired by the-bureau.framer.website)
+#services {
+  padding: 6rem 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  .service-header {
+    margin-bottom: 4rem; // Increased bottom margin
+
+    .service-subtitle {
+      color: #6c757d;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    h2 {
+      font-size: 4rem; // Larger title size like example
+      font-weight: bold;
+      margin-bottom: 0;
+      line-height: 1.1;
+    }
+
+    .service-description {
+      color: #343a40;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 0; 
+    }
+  }
+
+  .service-interactive-area {
+    position: relative; // Needed for potential absolute positioning within details
+  }
+
+  .service-list {
+    ul {
+      list-style: none !important;
+      padding: 0;
+      margin: 0;
+
+      // Styles applied when the mouse is over the list (ul.list-active)
+      &.list-active {
+        .service-list-item:not(:hover) {
+          .service-item-title {
+            color: #adb5bd; // Fade non-hovered items to light grey
+          }
+          .arrow {
+             opacity: 0; // Ensure arrow is hidden on non-hovered items in active list
+          }
+        }
+      }
+    }
+
+    .service-list-item {
+      padding: 1.5rem 0; // Vertical padding
+      cursor: pointer;
+      list-style: none !important; // Force remove bullet points
+      // border-bottom: 1px solid rgba(0, 0, 0, 0.05); // Removed divider
+      // Transition for properties changing on the list item itself
+      transition: border-color 0.3s ease; 
+
+      // Hide potential pseudo-element bullets
+      &::before {
+        content: none !important;
+        display: none !important;
+      }
+
+      &:first-child {
+        // border-top: 1px solid rgba(0, 0, 0, 0.05); // Removed divider
+      }
+
+      .service-item-title {
+        font-size: 2.5rem; 
+        font-weight: bold;
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #000; // Default color is black
+        transition: color 0.3s ease; // Transition for color changes
+      }
+
+      .arrow {
+        opacity: 0;
+        transition: opacity 0.3s ease; // Smooth arrow appearance
+        font-size: 2rem; 
+        color: #000; // Arrow color when visible (matches active text)
+      }
+
+      // Direct hover/active state on the item itself (overrides general fade-out)
+      &.active,
+      &:hover {
+        .service-item-title {
+           color: #000 !important; // Ensure active item title is black
+        }
+        .arrow {
+          opacity: 1;
+        }
+      }
+
+      // No need for the explicit :not(.active) rule here anymore
+      // as the default is black and the .list-active rule handles fading
+    }
+  }
+
+  .service-details {
+    position: relative; // Use relative for normal flow 
+    // Use sticky if you want it to stick while scrolling past the list:
+    // position: sticky;
+    // top: 100px; // Adjust based on your header height
+    padding-top: 1.5rem; // Align with top padding of list items
+    min-height: 400px; // Ensure space even if content is short, adjust as needed
+
+    .service-detail-content {
+        // Add a subtle fade-in/out for switching items
+        transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        opacity: 1;
+        visibility: visible;
+
+        &.d-none {
+          opacity: 0;
+          visibility: hidden;
+          position: absolute; // Take out of flow when hidden to prevent height jumps
+          top: 0; // Position correctly when absolute
+          left: 0;
+          right: 0;
+        }
+
+      .service-item-description {
+        font-size: 1.1rem;
+        color: #343a40;
+        line-height: 1.6;
+      }
+
+      .service-image {
+        max-width: 100%;
+        height: auto;
+        margin-top: 2rem; // Space between text and image
+        border-radius: 8px; // Slightly rounded corners for the image
+      }
+      
+      .image-placeholder {
+        height: 200px;
+        background-color: #eee;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #aaa;
+        border-radius: 8px;
+        margin-top: 2rem;
+      }
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 767px) {
+  #services {
+    .service-header h2 {
+        font-size: 2.5rem;
+    }
+    .service-interactive-area {
+      flex-direction: column; // Stack columns on mobile
+    }
+    .service-list {
+      margin-bottom: 2rem;
+      width: 100%; // Ensure full width
+      .service-list-item {
+        padding: 1rem 0;
+        .service-item-title {
+          font-size: 1.8rem;
+        }
+        .arrow {
+          display: none; // Hide arrow on mobile? Optional.
+        }
+      }
+    }
+    .service-details {
+       padding-top: 0;
+       min-height: auto;
+       width: 100%; // Ensure full width
+       position: static; // Reset position on mobile
+       .service-detail-content {
+            &.d-none { 
+                position: static; // Reset position when hidden on mobile
+            }
+            .service-image {
+                 margin-top: 1rem;
+            }
+       }
+    }
+  }
+}
+
+// Override spacing between showcase and the next section
+@media (min-width: 1200px) {
+  .rad-showcase + section {
+    margin-top: 0 !important; // Remove the negative margin
+  }
 } 

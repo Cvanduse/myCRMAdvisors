@@ -1,0 +1,57 @@
+{{- $contextType := printf "%T" . -}}
+{{- $isShortcode := (eq $contextType "*hugolib.ShortcodeWithPage") -}}
+
+{{- /* Title */}}
+{{- $title := "" -}}
+
+{{- if $isShortcode }}
+  {{- $title = .Get "title" | default ( i18n "education_title" ) -}}
+{{ else }}
+  {{- $title = i18n "education_title" -}}
+{{ end }}
+
+{{- $services := .Site.Data.homepage.services -}}
+{{- if $services.enable -}}
+<section id="services" class="section section--border-bottom rad-animation-group">
+  <div class="container">
+    <div class="row rad-fade-down service-header mb-5">
+      <div class="col-12 col-md-5">
+        <p class="service-subtitle text-uppercase">{{ $services.subtitle }}</p>
+        <h2>{{ $services.title | safeHTML }}</h2>
+      </div>
+      <div class="col-12 col-md-7 d-flex align-items-end">
+        <p class="service-description">{{ $services.description }}</p>
+      </div>
+    </div>
+
+    <div class="row service-interactive-area">
+      <!-- Left Column: Service Titles List -->
+      <div class="col-12 col-md-5 service-list">
+        <ul>
+          {{- range $index, $item := $services.items -}}
+          <li class="service-list-item {{ if eq $index 0 }}active{{ end }}" data-service-id="service-{{ $index }}">
+            <h3 class="service-item-title">{{ $item.title }} <span class="arrow">→</span></h3>
+          </li>
+          {{- end -}}
+        </ul>
+      </div>
+
+      <!-- Right Column: Service Details (Description + Image) -->
+      <div class="col-12 col-md-7 service-details">
+        {{- range $index, $item := $services.items -}}
+        <div class="service-detail-content {{ if eq $index 0 }}active{{ else }}d-none{{ end }}" id="service-{{ $index }}">
+          <p class="service-item-description mb-4">{{ $item.description }}</p>
+          {{ $img := resources.Get $item.image }}
+          {{ if $img }}
+            <img src="{{ $img.RelPermalink }}" alt="{{ $item.title }}" class="img-fluid service-image">
+          {{ else }}
+            <!-- Optional: Placeholder if image not found -->
+             <div class="image-placeholder">Image for {{ $item.title }}</div> 
+          {{ end }}
+        </div>
+        {{- end -}}
+      </div>
+    </div>
+  </div>
+</section>
+{{- end -}}

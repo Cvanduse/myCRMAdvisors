@@ -13,3 +13,23 @@ showcase:
   button:
     URL: "#about"
     text: "About us"
+
+# Add the new services section structure
+services:
+  enable: true
+  subtitle: "Services"
+  title: "What we do"
+  description: "This way, we can cut out all the project management and focus just on the design processes." # From reference site
+  items:
+    - title: "Art & Culture"
+      description: "Connecting people through art, stories, food, and culture"
+      image: "images/services/art_culture.png" # Placeholder
+    - title: "Consumer Tech"
+      description: "Making your everyday apps a little more delightful"
+      image: "images/services/consumer_tech.png" # Placeholder
+    - title: "Fintech"
+      description: "Providing new ways to share, save, invest, and manage money"
+      image: "images/services/fintech.png" # Placeholder
+    - title: "Healthcare"
+      description: "Working to make life healthier and care better"
+      image: "images/services/healthcare.png" # Placeholder

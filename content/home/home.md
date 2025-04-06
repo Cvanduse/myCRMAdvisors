@@ -33,23 +33,7 @@ draft = false
     imgScale="0.5"
     >}}
 
-<!--
-{{< education-list
-    title="Services  What we do" 
-    >}}
--->
-<!--
-{{< experience-section
-    title="My job experience"
-    intro_title="Professional Background"
-    intro_description="A summary of my professional journey and expertise." 
-    button1_url="https://example.com"
-    button1_text="Visit Example"
-    button1_icon="icon-globe"
-    button2_text="All experience"
-    button2_url="/experience"
-    >}}
--->
+{{< services-section >}}
 
 {{< client-and-work-section
     title="A selection of my work" >}} 

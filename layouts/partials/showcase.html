@@ -1,43 +1,61 @@
-<!-- Hero Section -->
-<section class="rad-showcase rad-showcase--index">
-  <div class="container">
-    <!-- Location tag -->
-    <div class="location-tag">
-      Palo Alto, CA 3
+{{/* Retrieve parameters from shortcode context */}}
+{{- $title := .Get "title" | default .Site.Data.homepage.showcase.title -}}
+{{- $subtitle := .Get "subtitle" | default .Site.Data.homepage.showcase.subtitle -}}
+{{- $description := .Get "description" | default .Site.Data.homepage.showcase.description | safeHTML -}}
+{{- $imgSrc := .Get "imgSrc" | default .Site.Data.homepage.showcase.image.src -}}
+{{- $imgScale := .Get "imgScale" | default .Site.Data.homepage.showcase.image.scale | default 0.5 -}}
+{{- $imgAlt := .Get "imgAlt" | default $title -}}
+{{- $buttonText := .Get "buttonText" | default .Site.Data.homepage.showcase.button.text -}}
+{{- $buttonURL := .Get "buttonURL" | default .Site.Data.homepage.showcase.button.URL | default "#contact" -}}
+
+{{/* Retrieve inner content (for platform links) */}}
+{{- $inner := .Scratch.Get "Inner" -}}
+
+{{/* Process the image from assets */}}
+{{- $image := "" -}}
+{{- if $imgSrc -}}
+  {{- $imageResource := resources.Get $imgSrc -}}
+  {{- if $imageResource -}}
+    {{/* You could add image processing here if needed, e.g., resizing */}}
+    {{/* $image = $imageResource.Resize "800x" */}}
+    {{ $image = $imageResource }}
+  {{- else -}}
+    {{ warnf "Showcase image resource not found: %s" $imgSrc }}
+  {{- end -}}
+{{- end -}}
+
+<section class="rad-showcase rad-showcase--index section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-6 align-self-center content">
+                <h1 class="rad-fade-down">{{ $title }}</h1>
+                {{ with $subtitle }}<p class="lead rad-fade-down rad-delay-sm">{{ . | safeHTML }}</p>{{ end }}
+                <p class="description rad-fade-down rad-delay-md">{{ $description }}</p>
+                
+                <div class="rad-fade-down rad-delay-lg hero-footer">
+                  {{ with $inner }}
+                    <div class="platform-links">{{ . }}</div>
+                  {{ end }}
+                  {{ if $buttonText }}
+                    <a href="{{ $buttonURL | absURL }}" class="btn btn-primary">
+                        {{ $buttonText }}
+                    </a>
+                  {{ end }}
+                </div>
+            </div>
+
+            {{ if $image }}
+            <div class="col-12 col-md-6 img-container">
+                <img class="img-fluid rad-fade-down rad-delay-md showcase-image" 
+                     src="{{ $image.RelPermalink }}" 
+                     alt="{{ $imgAlt }}" 
+                     {{/* Optional: Add width/height if $image is processed */}}
+                     {{/* width="{{ $image.Width }}" 
+                     height="{{ $image.Height }}" */}}
+                     style="transform: scale({{ $imgScale }});">
+            </div>
+            {{ end }}
+        </div>
     </div>
 
-    <!-- Main heading -->
-    <div class="hero-content">
-      <h1 class="hero-title headline">
-        <span class="font-poppins-bold">We</span> <span class="font-playfair-italic">are a</span> <span class="font-poppins-bold">Strategy</span><br>
-        <span class="font-playfair-regular">&</span> <span class="font-poppins-bold">Design Studio</span>
-      </h1>
-
-      <!-- Description -->
-      <div class="hero-description">
-        We are helping companies bring new products and services to market.<br>
-        Smart, collaborative, and fun.
-      </div>
-
-      <!-- Footer with social links and button -->
-      <div class="hero-footer">
-        <div class="social-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="icon-instagram"></i>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="icon-facebook"></i>
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <i class="icon-twitter"></i>
-          </a>
-        </div>
-        <div class="about-button">
-          <a href="#about" class="btn">
-            About us
-          </a>
-        </div>
-      </div>
-    </div>
-  </div>
 </section> 
