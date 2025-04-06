@@ -9458,7 +9458,7 @@ textarea.form-control-lg {
 
 .btn-primary {
   position: relative;
-  color: #fff;
+  color: #fff !important;
   background-color: #000;
   border-color: #000;
   will-change: border-color, color, background-color;

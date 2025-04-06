@@ -15,5 +15,12 @@
       <guid>http://localhost:1313/services/high-school/</guid>
       <description></description>
     </item>
+    <item>
+      <title>University of Life</title>
+      <link>http://localhost:1313/services/university-of-life/</link>
+      <pubDate>Sun, 25 Aug 2024 09:53:42 +0200</pubDate>
+      <guid>http://localhost:1313/services/university-of-life/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

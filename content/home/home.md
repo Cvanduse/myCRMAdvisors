@@ -31,12 +31,14 @@ draft = false
     button_url="https://www.google.com"
     imgSrc="images/about/user-picture.png"
     imgScale="0.5"
- >}}
+    >}}
 
+<!--
 {{< education-list
     title="Services  What we do" 
     >}}
-
+-->
+<!--
 {{< experience-section
     title="My job experience"
     intro_title="Professional Background"
@@ -46,7 +48,8 @@ draft = false
     button1_icon="icon-globe"
     button2_text="All experience"
     button2_url="/experience"
->}}
+    >}}
+-->
 
 {{< client-and-work-section
     title="A selection of my work" >}} 
