@@ -1,6 +1,7 @@
 baseURL = "https://mycrmadvisors.netlify.app/"
 title = "Adritian Demo"
 languageCode = "en"
+defaultContentLanguage = "en"
 
 [markup.goldmark.renderer]
 unsafe = true
@@ -50,36 +51,15 @@ target = "assets/css/bootstrap-print.css"
 
 
 [params]
-title = 'Adritian - a high performance hugo theme by Adrián Moreno'
-description = 'This hugo theme (Adritian) is based on Bootstrap and has features that make it suitable for a personal site, a portfolio or other kind of Single Page Applications.'
-images = ['/img/og-img.png']
-sections = [
-  "showcase",
-  "about",
-  "education",
-  "experience",
-  "client-and-work",
-  "testimonial",
-  "contact",
-  "newsletter",
-]
-# If you want to display an image logo in the header, you can add it here
-# logo = '/img/hugo.svg'
+title = 'MyCRM Advisors'
+description = 'We are helping companies bring new products and services to market. Smart, collaborative, and fun.'
 
 homepageExperienceCount = 6
 
 [params.analytics]
-## Analytics parameters.
-### Supported so far: Vercel (Page Insights, Analytics)
-### And Google (Tag Manager, Analytics)
-
-# controls vercel page insights - disabled by default
-# to enable, just set to true
 vercelPageInsights = false
 vercelAnalytics = false
 
-# google analytics and tag manager. to enable, set "enabled" to true
-# and add the tracking code (UA-something for analytics, GTM-something for tag manager)
 [params.analytics.googleAnalytics]
 code = "UA-XXXXX-Y"
 enabled = false
@@ -101,12 +81,10 @@ mobileHeader = false
 
 [languages]
 [languages.en]
-disabled = false
 languageCode = 'en'
 languageDirection = 'ltr'
 languageName = 'English'
-title = ''
-weight = 0
+weight = 1
 
 [languages.en.menus]
 [[languages.en.menus.header]]
@@ -121,16 +99,6 @@ weight = 2
 name = 'Portfolio'
 URL = '#portfolio'
 weight = 3
-#  [[languages.en.menus.header]]
-#  name = "Experience"
-#  URL = "#experience"
-#  weight = 4
-
-[[languages.en.menus.header]]
-name = "How to"
-URL = "/blog"
-weight = 5
-
 [[languages.en.menus.header]]
 name = "Contact"
 URL = "#contact"
@@ -140,23 +108,18 @@ weight = 6
 name = "Home"
 URL = "/"
 weight = 1
-
 [[languages.en.menus.footer]]
 name = "About"
 URL = "#about"
 weight = 2
-
 [[languages.en.menus.footer]]
 name = "Portfolio"
 URL = "#portfolio"
 weight = 3
-
 [[languages.en.menus.footer]]
 name = "Contact"
 URL = "#contact"
 weight = 4
-
-
 
 # Plugins
 [params.plugins]
@@ -166,7 +129,6 @@ weight = 4
 URL = "css/custom.css"
 [[params.plugins.css]]
 URL = "css/adritian-icons.css"
-## Print css
 [[params.plugins.css]]
 URL = "css/bootstrap-print.css"
 
@@ -182,35 +144,13 @@ URL = "js/library/fontfaceobserver.js"
 [[params.plugins.scss]]
 URL = "scss/adritian.scss"
 
-
-# theme/color style 
-[params.colorTheme]
-
-## the following configuration would disable automatic theme selection
-#  [params.colorTheme.auto]
-#    disable = true
-#  [params.colorTheme.forced]
-#    theme = "dark"
-
-## the following parameter will disable theme override in the footer
-#  [params.colorTheme.selector.disable]
-#  footer = true
-
-
-[params.colorTheme.selector.disable]
-footer = false
-header = false
-mobileHeader = false
-## by default we allow override AND automatic selection
-
 [params.blog]
-layout = "default"     # options: default, sidebar
-sidebarWidth = "25"    # percentage width of the sidebar
+layout = "default"
+sidebarWidth = "25"
 showCategories = true
 showRecentPosts = true
 recentPostCount = 5
-listStyle = "summary"  # options: simple, summary
-
+listStyle = "summary"
 
 [params.experience]
-showJobCard = true # Set to false to hide the job card
+showJobCard = true

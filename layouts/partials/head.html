@@ -3,6 +3,11 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
 <meta name="theme-color" content="#478079"/>
 
+<!-- Add Fraunces font -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
 {{- if .Site.Params.analytics.googleTagManager.enabled }}
 <link rel="preconnect" href="https://www.googletagmanager.com">
 {{- end }}
@@ -65,6 +70,9 @@
         {{ end }}
       />
     </noscript>
+
+    <!-- Force light mode and white backgrounds -->
+    <link rel="stylesheet" href="/css/override.css" />
 {{- end }}
 {{- range .Site.Params.plugins.scss }}
   {{/* no external scss processing - as they need to be processed by the theme */}}

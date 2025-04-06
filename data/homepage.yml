@@ -1,0 +1,15 @@
+showcase:
+  location: "★ Palo Alto, CA"
+  title: "We are a"
+  title2: "Strategy & Design Studio"
+  description: "We are helping companies bring new products and services to market.<br>Smart, collaborative, and fun."
+  socialLinks:
+    - icon: "instagram"
+      URL: "#"
+    - icon: "facebook"
+      URL: "#"
+    - icon: "twitter"
+      URL: "#"
+  button:
+    URL: "#about"
+    text: "About us"

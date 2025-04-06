@@ -1,0 +1,58 @@
+/* Force light mode */
+:root,
+:root[data-bs-theme="dark"],
+:root[data-bs-theme="light"],
+:root[data-bs-theme="auto"] {
+    --bs-body-bg: #fff !important;
+    --bs-body-color: #000 !important;
+    --bs-bg-opacity: 1 !important;
+    color-scheme: light !important;
+}
+
+html,
+html[data-bs-theme="dark"],
+html[data-bs-theme="light"],
+html[data-bs-theme="auto"] {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+body,
+body[data-bs-theme="dark"],
+body[data-bs-theme="light"],
+body[data-bs-theme="auto"] {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* Force all sections to have white background */
+.rad-showcase,
+.rad-about,
+.rad-experience,
+.rad-blog,
+.rad-client-work,
+.rad-testimonial,
+.rad-contact,
+.rad-footer,
+.rad-navbar,
+.container,
+.container-fluid,
+section,
+main,
+header,
+footer {
+    background-color: #fff !important;
+    color: #000 !important;
+}
+
+/* Force all text to be black */
+h1, h2, h3, h4, h5, h6,
+p, span, a, div {
+    color: #000 !important;
+}
+
+/* Hide theme switcher */
+.theme-selector,
+[data-bs-theme-value] {
+    display: none !important;
+} 

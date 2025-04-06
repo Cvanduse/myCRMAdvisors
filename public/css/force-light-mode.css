@@ -1,0 +1,82 @@
+/*
+ * Force Light Mode and Black Text
+ * This file contains important overrides to ensure Bootstrap stays in light mode
+ */
+
+:root,
+[data-bs-theme=dark],
+[data-bs-theme=light],
+[data-bs-theme=auto] {
+  /* Bootstrap core theme variables */
+  --bs-body-bg: #fff !important;
+  --bs-body-color: #000 !important;
+  --bs-navbar-color: #000 !important;
+  --bs-navbar-hover-color: #000 !important;
+  --bs-navbar-active-color: #000 !important;
+  --bs-navbar-brand-color: #000 !important;
+  --bs-navbar-brand-hover-color: #000 !important;
+}
+
+/* Force navbar text to be black */
+.navbar .nav-link,
+.navbar.navbar-light .nav-link,
+.navbar-light .nav-link,
+.navbar-light .navbar-nav .nav-link,
+.navbar-nav .nav-link,
+nav .nav-link {
+  color: #000 !important;
+  font-weight: 600 !important;
+}
+
+/* Make sure CTA buttons have proper styling */
+.navbar .nav-item.nav-cta .nav-link:not(.nav-cta-highlight) {
+  color: #000 !important;
+  border: 1px solid #000 !important;
+}
+
+.navbar .nav-item.nav-cta .nav-cta-highlight {
+  color: #fff !important;
+  background-color: #000 !important;
+}
+
+/* Add !important to all overrides to make sure they take effect */
+html[data-bs-theme],
+html[data-bs-theme="dark"],
+html[data-bs-theme="light"],
+html[data-bs-theme="auto"] {
+  background-color: #fff !important;
+  color: #000 !important;
+  --bs-navbar-color: #000 !important;
+  --bs-navbar-hover-color: #000 !important;
+  --bs-navbar-active-color: #000 !important;
+  --bs-navbar-brand-color: #000 !important;
+  --bs-navbar-brand-hover-color: #000 !important;
+}
+
+/* Override any text that might be accidentally white */
+.text-white {
+  color: #000 !important;
+}
+
+/* Make sure header and navbar have black text */
+.header,
+.navbar,
+.navbar-nav {
+  --bs-navbar-color: #000 !important;
+  --bs-navbar-hover-color: #000 !important;
+  --bs-navbar-active-color: #000 !important;
+  color: #000 !important;
+}
+
+/* Make sure the navbar brand (logo text) is black */
+.navbar-brand,
+.navbar .navbar-brand,
+.navbar-light .navbar-brand {
+  color: #000 !important;
+  font-weight: 700 !important;
+}
+
+/* Fix any dark/light mode switches */
+[data-bs-theme-value] {
+  display: none !important;
+} 

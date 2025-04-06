@@ -1,0 +1,232 @@
+/* Showcase section styles */
+.rad-showcase {
+  padding: 120px 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background-color: #fff !important;
+  color: #000 !important;
+
+  .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    color: #000 !important;
+  }
+
+  .location-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: 1px solid #000;
+    border-radius: 100px;
+    font-size: 16px;
+    margin-bottom: 40px;
+    color: #000 !important;
+    font-weight: 500;
+
+    &::before {
+      content: '★';
+      font-size: 14px;
+    }
+  }
+
+  .hero-content {
+    max-width: 900px;
+    color: #000 !important;
+
+    * {
+      color: #000 !important;
+    }
+  }
+
+  h1.hero-title,
+  .hero-title {
+    font-family: "Fraunces", serif;
+    font-size: 80px;
+    line-height: 1.1;
+    margin-bottom: 40px;
+    color: #000 !important;
+    -webkit-text-fill-color: #000 !important;
+    
+    em, i {
+      font-family: "Fraunces", serif;
+      font-style: italic;
+      font-weight: 400;
+      color: #000 !important;
+      -webkit-text-fill-color: #000 !important;
+    }
+  }
+
+  .hero-description {
+    font-size: 24px;
+    line-height: 1.5;
+    margin-bottom: 60px;
+    max-width: 700px;
+    color: #000 !important;
+  }
+
+  .hero-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 60px;
+  }
+
+  .social-links {
+    display: flex;
+    gap: 20px;
+
+    a {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: #000;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: opacity 0.3s ease;
+
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  .about-button {
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      border: 1px solid #000;
+      border-radius: 100px;
+      font-size: 16px;
+      text-decoration: none;
+      color: #000;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+}
+
+/* Navigation styles */
+.header, 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  background: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  .navbar {
+    padding: 0;
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 24px;
+      color: #000;
+      text-decoration: none;
+
+      .logo-text {
+        color: #000;
+        font-weight: 700;
+      }
+    }
+
+    .nav-item {
+      margin: 0 5px;
+
+      .nav-link {
+        color: #000 !important;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 10px 16px;
+        border-radius: 100px;
+        transition: all 0.3s ease;
+        text-decoration: none;
+
+        &:hover {
+          background: rgba(0, 0, 0, 0.05);
+        }
+
+        &.active {
+          background: #000;
+          color: #000 !important;
+        }
+      }
+    }
+
+    .nav-cta {
+      margin-left: 16px;
+      
+      .nav-link {
+        border: 1px solid #000;
+        
+        &:hover {
+          background: #000;
+          color: #000 !important;
+        }
+      }
+
+      .nav-cta-highlight {
+        background: #000;
+        color: #000 !important;
+        
+        &:hover {
+          background: #eee;
+          color: #000 !important;
+        }
+      }
+    }
+  }
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .rad-showcase {
+    padding: 80px 0;
+
+    .hero-title {
+      font-size: 48px;
+      color: #000 !important;
+      -webkit-text-fill-color: #000 !important;
+    }
+
+    .hero-description {
+      font-size: 20px;
+      color: #000 !important;
+    }
+
+    .hero-footer {
+      flex-direction: column;
+      gap: 30px;
+    }
+  }
+}
+
+/* Additional color overrides */
+html body .rad-showcase,
+html body .rad-showcase *:not(.social-links a):not(.btn:hover) {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+}
+
+/* Force black text for hero title specifically */
+html body .rad-showcase .hero-title,
+html body .rad-showcase .hero-title em,
+html body .rad-showcase .hero-title i,
+html body .rad-showcase h1,
+html body .rad-showcase h1 em,
+html body .rad-showcase h1 i {
+  color: #000 !important;
+  -webkit-text-fill-color: #000 !important;
+} 

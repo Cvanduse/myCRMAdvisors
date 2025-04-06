@@ -4,7 +4,6 @@ type = "home"
 draft = false
 +++
 
-
 {{< showcase-section
     title="Showcase section"
     subtitle="Subtitle - coming from <code>home.md</code>"
@@ -15,26 +14,11 @@ draft = false
  >}}
 
 {{< platform-links >}}
-    {{< link icon="square-facebook" url="https://facebook.com/yourpage" >}}
-    {{< link icon="square-twitter" url="https://twitter.com/yourpage" >}}
     {{< link icon="linkedin" url="https://www.linkedin.com/in/adrianmoreno/" >}}
     {{< link icon="square-github" url="https://github.com/zetxek" >}}
     {{< link icon="x-twitter" url="https://twitter.com/zetxek" >}}
-    {{< link icon="dribbble" url="#" >}}
-    {{< link icon="behance" url="#" >}}
-    {{< link icon="youtube" url="#" >}}
     {{< link icon="instagram" url="https://www.instagram.com/zetxek/" >}}
     {{< link icon="square-facebook" url="https://www.facebook.com/zetxek/" >}}
-    {{< link icon="codepen" url="#" >}}
-    {{< link icon="yelp" url="https://www.yelp.com/" >}}
-    {{< link icon="bluesky" url="https://www.bluesky.com/" >}}
-    {{< link icon="threads" url="https://www.threads.net/" >}}
-    {{< link icon="face-smile" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="user" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="quote-left" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="cloud-arrow-down" url="https://www.adrianmoreno.info/" >}}
-    {{< link icon="square-xing" url="https://www.adrianmoreno.info/" >}}
-
 {{< /platform-links >}}
 
 {{< /showcase-section >}}
@@ -50,24 +34,18 @@ draft = false
  >}}
 
 {{< education-list
-    title="Formal Education (education-list)" >}}
+    title="Formal Education" >}}
 
 {{< experience-section
-    title="My job experience (title)"
-    intro_title="Intro (intro_title)"
-    intro_description="Description (intro_description).<br>You can use HTML,with <strong>strong</strong> formatting, or lists <ul><li>one</li><li>two</li></ul>" 
+    title="My job experience"
+    intro_title="Professional Background"
+    intro_description="A summary of my professional journey and expertise." 
     button1_url="https://example.com"
     button1_text="Visit Example"
     button1_icon="icon-globe"
     button2_text="All experience"
     button2_url="/experience"
-    button3_text="Button #3"
-    button3_url="/experience"
 >}}
-
-## Experience (as list)
-
-{{< experience-list >}}
 
 {{< client-and-work-section
     title="A selection of my work" >}} 
